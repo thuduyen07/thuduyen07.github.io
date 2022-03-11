@@ -86,7 +86,7 @@ Clean report: `allure report clean` (by default: looking for the report in **al
 
 - **Environment**
     
-    add `[environment.properties](http://environment.properties)` to `allure-results` before generating report
+    add `environment.properties` to `allure-results` before generating report
     
     ```xml
     Browser=Chrome
@@ -103,8 +103,8 @@ Clean report: `allure report clean` (by default: looking for the report in **al
     {
     	"name": "Problems",
     	"matchedStatuses": ["passes", "slipped", "unknown", "broken", "failed"],
-    	"message[Regex](https://www.notion.so/bded05b5bf6a4b73b7a348049df1b0ab)": ".*gau-gau.*",
-    	"trace[Regex](https://www.notion.so/bded05b5bf6a4b73b7a348049df1b0ab)": ".*FileNotFoundExceptions.*"
+    	"messageRegex": ".*gau-gau.*",
+    	"traceRegex": ".*FileNotFoundExceptions.*"
       }
     ]
     ```
