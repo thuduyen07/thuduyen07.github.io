@@ -7,7 +7,7 @@ You can also check out my social medias:
 
 # Git
 
-## Dùng git cho dự án đang làm
+### Dùng git cho dự án đang làm
 1. Tạo thư mục tên folder-name ở local
 2. `cd folder-name` để vào thư mục vừa tạo
 3. Gọi `git clone <link>` để clone repo về local
@@ -28,9 +28,106 @@ You can also check out my social medias:
 - Dùng `git --no-pager log > log-file-name.txt` để xuất nội dung git commit
 - Dùng `git --no-pager pull > log-file-name.txt` để xuất nội dung git pull
 
+# Allure report
+*Note: All information in this article is used for Windows.*
 
-### Reference:
-#### Git Pages
+Allure framework is a test report tool.
+
+### Install
+
+Using Power Shell
+
+- Install: `scoop install allure`
+- Update: `scoop update allure`
+- Check installation: `allure --version`
+
+### Test execution
+
+Configuration:
+
+1. In `allure.properties` (in `src/test/resource`)
+    
+    ```
+    allure.results.directory=target/allure-results
+    allure.link.issue.pattern=https://example.org/browse/{}
+    allure.link.tms.pattern=https://example.org/browse/{}
+    ```
+    
+    Note:
+    
+    - `allure.link.my-link-type.pattern=https://example.org/custom/{}/path` specify the link pattern for `@TmsLink`, allure will replace `{}` placeholders with value specified in annotation
+2. In `pom.xml` (setting system properties)
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.20</version>
+            <configuration>
+                <systemPropertyVariables>
+                    <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    <allure.link.issue.pattern>https://example.org/browse/{}</allure.link.issue.pattern>
+                    <allure.link.tms.pattern>https://example.org/browse/{}</allure.link.tms.pattern>
+                </systemPropertyVariables>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+
+### Report generation
+
+`allure serve <allure-result-path>`
+
+Clean report: `allure report clean` (by default: looking for the report in **allure-results**
+ folder)
+
+- **Environment**
+    
+    add `[environment.properties](http://environment.properties)` to `allure-results` before generating report
+    
+    ```xml
+    Browser=Chrome
+    Browser.Version=98.0.4758.102  //todo get version automatically
+    Stand=Production
+    ```
+    
+- **Categories**
+    
+    Custom defects classification by adding `allure-results/categories.json` hoặc `test/resource/categories.json`
+    
+    ```json
+    [
+    {
+    	"name": "Problems",
+    	"matchedStatuses": ["passes", "slipped", "unknown", "broken", "failed"],
+    	"message[Regex](https://www.notion.so/bded05b5bf6a4b73b7a348049df1b0ab)": ".*gau-gau.*",
+    	"trace[Regex](https://www.notion.so/bded05b5bf6a4b73b7a348049df1b0ab)": ".*FileNotFoundExceptions.*"
+      }
+    ]
+    ```
+    
+
+### Note
+
+1. surefire maven-plugin: create report automatically
+2. How to use `@TmsLink` and `@Issue`, configure in `allure.properties`
+3. Using `@Flaky`for flaky tests, which are not always passed or failed, they fail from time to time
+
+### Questions
+
+1. Get chrome version automatically for `environment.propreties`?
+
+### Reference
+
+[Allure Framework (qameta.io)](https://docs.qameta.io/allure/)
+
+# Log4j
+
+
+### Git Pages reference
 - [Github Pages](https://docs.github.com/en/pages/quickstart)
 - [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [documentation](https://docs.github.com/categories/github-pages-basics/)
