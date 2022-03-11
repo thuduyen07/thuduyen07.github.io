@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+## Welcome to thuduyen07 GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/thuduyen07/thuduyen07.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+You can also check out my social medias: 
+- [thuduyen07-Github](https://github.com/thuduyen07/)
+- [thuduyen07-LinkedIn](https://www.linkedin.com/in/thuduyen07/)
+- [thuduyen07-Facebook](https://www.facebook.com/thuduyen07) 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Git
 
-### Markdown
+## Dùng git cho dự án đang làm
+1. Tạo thư mục tên folder-name ở local
+2. `cd folder-name` để vào thư mục vừa tạo
+3. Gọi `git clone <link>` để clone repo về local
+4. `git status` để kiểm tra repo
+5. `git branch` để hiển thị tất cả các nhánh có trong repo
+6. `git branch new-branch-name` để tạo nhánh mới
+7. `git checkout branch-name` để chuyển nhánh
+8. `git add file-name` để thêm file vào staging area 
+9. `git commit -m “message”` để thêm các thay đổi ở staging area vào git repo
+10. `git push origin branch-name` để đẩy thay đổi lên server
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Note:
 
-```markdown
-Syntax highlighted code block
+- Nhớ pull code mỗi ngày, hoặc trước khi làm việc để tránh trường hợp out updated.
+- Nhớ chạy lệnh `mvn clean compile` ngay khi pull code về để tạo pojo, tránh lỗi import bị outdated.
+- Nhớ kiểm tra các sensitive data trước khi add và commit
+- Dùng `git diff` để xem các thay đổi
+- Dùng `git --no-pager log > log-file-name.txt` để xuất nội dung git commit
+- Dùng `git --no-pager pull > log-file-name.txt` để xuất nội dung git pull
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thuduyen07/thuduyen07.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Reference:
+#### Git Pages
+- [Github Pages](https://docs.github.com/en/pages/quickstart)
+- [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [documentation](https://docs.github.com/categories/github-pages-basics/)
+- [contact support](https://support.github.com/contact)
