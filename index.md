@@ -27,14 +27,15 @@ You can also check out my social medias:
 - Dùng `git diff` để xem các thay đổi
 - Dùng `git --no-pager log > log-file-name.txt` để xuất nội dung git commit
 - Dùng `git --no-pager pull > log-file-name.txt` để xuất nội dung git pull
-- Sửa commit message:
+- Sửa commit message: 
     1. Sửa cái gần nhất: `git commit --amend -m "meomeo new message"`
     2. Sửa cái xa xa =))
     - Dùng `git rebase -i HEAD~commit-number` để mở file
     - Đổi `pick` thành `reword` ở commit muốn sửa
     - Sửa và lưu file
+    - *Note: Nhớ kiểm tra branch trước khi tiếp tục các bước tiếp theo =))*
     - Ref. [How to Change Commit Message in Git (w3docs.com)](https://www.w3docs.com/snippets/git/how-to-change-commit-message.html)
-
+    
 # Allure report
 *Note: All information in this article is used for Windows.*
 
