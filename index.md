@@ -4,26 +4,30 @@ You can also check out my social medias:
 - [thuduyen07-Github](https://github.com/thuduyen07/)
 - [thuduyen07-LinkedIn](https://www.linkedin.com/in/thuduyen07/)
 - [thuduyen07-Facebook](https://www.facebook.com/thuduyen07) 
+- [thuduyen07-topcv](https://www.topcv.vn/xem-cv/UlsAVlUCDwkFVQEIA1EIUlcEUVNRBANRBQ4HWwc662)
 
 # Git
 
 ### Dùng git cho dự án đang làm
-1. Tạo thư mục tên folder-name ở local
-2. `cd folder-name` để vào thư mục vừa tạo
+1. Tạo thư mục tên `duyen-folder` ở local
+2. `cd duyen-folder` để vào thư mục vừa tạo
 3. Gọi `git clone <link>` để clone repo về local
 4. `git status` để kiểm tra repo
-5. `git branch` để hiển thị tất cả các nhánh có trong repo
-6. `git branch new-branch-name` để tạo nhánh mới
-7. `git checkout branch-name` để chuyển nhánh
-8. `git add file-name` để thêm file vào staging area 
+5. `git branch` để hiển thị tất cả các nhánh có trong repo ở local
+6. `git branch duyen-branch` để tạo nhánh mới
+7. `git checkout duyen-branch` để chuyển nhánh
+8. `git add duyen-file` để thêm file vào staging area 
 9. `git commit -m “message”` để thêm các thay đổi ở staging area vào git repo
-10. `git push origin branch-name` để đẩy thay đổi lên server
+10. `git checkout master` và `git pull` để cập nhật thay đổi mới nhất
+11. `git checkout duyen-branch` để về lại nhánh đang làm việc
+12. `git merge master` để kiểm tra và resolve conflict nếu có --> commit code update
+13. `git push origin duyen-branch` để đẩy thay đổi lên server
 
 ### Note:
-
 - Nhớ pull code mỗi ngày, hoặc trước khi làm việc để tránh trường hợp out updated.
 - Nhớ chạy lệnh `mvn clean compile` ngay khi pull code về để tạo pojo, tránh lỗi import bị outdated.
 - Nhớ kiểm tra các sensitive data trước khi add và commit
+- Dùng `git stash save "mesage"` và `git stash pop` để hotfix
 - Dùng `git diff` để xem các thay đổi
 - Dùng `git --no-pager log > log-file-name.txt` để xuất nội dung git commit
 - Dùng `git --no-pager pull > log-file-name.txt` để xuất nội dung git pull
